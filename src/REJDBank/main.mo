@@ -3,7 +3,7 @@ import Nat "mo:base/Nat";
 
 
 actor REJDBank {
-  var currentValue = 300;
+  var currentValue: Nat = 300;
   currentValue :=  100;
 
   let id = 23423423423;
@@ -17,13 +17,22 @@ actor REJDBank {
     currentValue += amount;
     Debug.print(debug_show(currentValue));
   };
+  // topUp()
 
   // Decrease Function
   public func withdraw(amount: Nat) {
-    currentValue -= amount;
-    Debug.print(debug_show(currentValue));
-  }
+    let tempValue: Int = currentValue - amount;
+    if (tempValue - amount >= 0) {
+      currentValue -= amount;
+      Debug.print(debug_show(currentValue));
+    } else {
+      Debug.print("Hi! Cherugodi obere: Amount is Larger than the currentValue which is less than zero")
+    }
+  };
 
-  // topUp()
+  public query func checkBalance(): async Nat {
+    return currentValue;
+  };
+
 }
 
