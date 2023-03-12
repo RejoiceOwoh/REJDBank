@@ -3,8 +3,8 @@ import Nat "mo:base/Nat";
 
 
 actor REJDBank {
-  var currentValue: Nat = 300;
-  currentValue :=  100;
+  stable var currentValue: Nat = 300;
+  // currentValue :=  100;
 
   let id = 23423423423;
   // id := 2234234234;
