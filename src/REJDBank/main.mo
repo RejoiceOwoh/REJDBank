@@ -11,5 +11,12 @@ actor REJDBank {
   // Debug.print(debug_show(currentValue));
   Debug.print(debug_show(id));
   // Debug.print("Hello")
+
+  public func topUp() {
+    currentValue += 1;
+    Debug.print(debug_show(currentValue));
+  };
+
+  // topUp()
 }
 
