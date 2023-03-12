@@ -1,4 +1,5 @@
 import Debug "mo:base/Debug";
+import Nat "mo:base/Nat";
 
 
 actor REJDBank {
@@ -12,10 +13,16 @@ actor REJDBank {
   Debug.print(debug_show(id));
   // Debug.print("Hello")
 
-  public func topUp() {
-    currentValue += 1;
+  public func topUp(amount: Nat) {
+    currentValue += amount;
     Debug.print(debug_show(currentValue));
   };
+
+  // Decrease Function
+  public func withdraw(amount: Nat) {
+    currentValue -= amount;
+    Debug.print(debug_show(currentValue));
+  }
 
   // topUp()
 }
